@@ -15,6 +15,7 @@ roomCompilerProcessingTesting = "2.6.1"
 appCompat = "1.6.1"
 cardview = "1.0.0"
 recyclerview = "1.4.0"
+firebaseCommonKtx = "21.0.0"
 
 
 [libraries]
@@ -39,6 +40,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-room-compiler-processing-testing = { group = "androidx.room", name = "room-compiler-processing-testing", version.ref = "roomCompilerProcessingTesting" }
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+firebase-common-ktx = { group = "com.google.firebase", name = "firebase-common-ktx", version.ref = "firebaseCommonKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

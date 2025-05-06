@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1044894993356",
+    "project_id": "industrial-security-app-12132",
+    "storage_bucket": "industrial-security-app-12132.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044894993356:android:33a1b686b9a839dbf56b69",
+        "android_client_info": {
+          "package_name": "com.example.signalization"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoCTsIFLZpCR1MU9OU_fU8LSz920yjGV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

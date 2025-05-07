@@ -8,6 +8,8 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import java.net.HttpURLConnection
+import java.net.URL
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
@@ -22,7 +24,25 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         super.onNewToken(token)
         Log.d("FCM", "FCM Token: $token")
 
-        // TODO: Отправь токен на свой сервер Django
+        sendTokenToServer(token)
+    }
+
+    private fun sendTokenToServer(token: String) {
+        val url = URL("https://yourserver.com/api/save_fcm_token/")
+
+        with(url.openConnection() as HttpURLConnection) {
+            requestMethod = "POST"
+            setRequestProperty("Content-Type", "application/json")
+            doOutput = true
+
+            val json = """{"token": "$token"}"""
+
+            outputStream.write(json.toByteArray())
+            outputStream.flush()
+            outputStream.close()
+
+            Log.d("FCM", "Token sent, response: $responseCode")
+        }
     }
 
     private fun showNotification(title: String?, message: String?) {

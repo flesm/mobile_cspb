@@ -58,9 +58,15 @@ dependencies {
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.recyclerview)
 
-    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
-    implementation("com.google.firebase:firebase-messaging:24.1.1")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging)
     implementation(libs.firebase.common.ktx)
+
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.logging.interceptor.v493)
+    implementation (libs.converter.scalars)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

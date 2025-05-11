@@ -6,4 +6,11 @@
     <color name="teal_700">#00796B</color>
     <color name="red_600">#E53935</color>
     <color name="amber_700">#FFA000</color>
+
+
+    <color name="your_primary_color">#6200EE</color>
+    <color name="your_primary_variant">#3700B3</color>
+    <color name="your_secondary_color">#03DAC6</color>
+    <color name="your_secondary_variant">#018786</color>
+    <color name="white">#FFFFFF</color>
 </resources>

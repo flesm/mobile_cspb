@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="?android:attr/windowBackground">
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавление сотрудника"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Ввод ФИО -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilFullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Введите ФИО"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Кнопка для выбора фото -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSelectPhoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Выбрать фото"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_baseline_photo_24"
+        app:iconGravity="textStart"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tilFullName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Превью изображения -->
+    <ImageView
+        android:id="@+id/imageViewPreview"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_background"
+        app:layout_constraintTop_toBottomOf="@id/btnSelectPhoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Кнопка для отправки фото и ФИО -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSendPhotoWithName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Отправить фото и ФИО"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_baseline_photo_24"
+        app:iconGravity="textStart"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPreview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

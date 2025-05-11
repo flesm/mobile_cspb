@@ -7,28 +7,58 @@
     android:layout_margin="8dp">
 
     <LinearLayout
-        android:padding="12dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
 
-        <TextView android:id="@+id/tvId"         android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/tvCreatedAt"  android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/tvDistance"   android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/tvIsDecided"  android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-
+        <!-- Фото -->
         <ImageView
             android:id="@+id/ivPhoto"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_marginBottom="4dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/tvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#333"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginEnd="12dp"/>
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#333"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- Время -->
+        <TextView
+            android:id="@+id/tvCreatedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666"
+            android:textSize="14sp"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Кнопка -->
         <Button
             android:id="@+id/btnItemMarkAsDecided"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mark as Decided"
-            android:layout_marginTop="8dp"/>
+            android:text="Пометить как просмотренное"
+            android:layout_marginTop="4dp"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -67,6 +67,7 @@ dependencies {
     implementation (libs.logging.interceptor.v493)
     implementation (libs.converter.scalars)
     implementation(libs.material)
+    implementation (libs.material.v1110)
 
 
     testImplementation(libs.junit)

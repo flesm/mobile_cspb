@@ -1,82 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnGetAllRecords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get All Records" />
-
-    <Button
-        android:id="@+id/btnGetLastUndecided"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Last Undecided" />
-
-    <Button
-        android:id="@+id/btnUploadImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload Image" />
-
-
-    <EditText
-        android:id="@+id/etDistance"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter distance"
-        android:inputType="numberDecimal" />
+        android:layout_height="wrap_content">
 
-    <!-- ФИО -->
-    <EditText
-        android:id="@+id/etFullName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Введите ФИО"
-        android:layout_marginTop="12dp" />
+        <Button
+            android:id="@+id/btnGetAllRecords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get All Records" />
 
-    <!-- Кнопка выбора изображения -->
-    <Button
-        android:id="@+id/btnSelectPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Выбрать фото" />
+        <Button
+            android:id="@+id/btnGetLastUndecided"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Last Undecided" />
 
-    <!-- Просмотр выбранного изображения -->
-    <ImageView
-        android:id="@+id/imageViewPreview"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="centerCrop"
-        android:background="#DDDDDD" />
+        <Button
+            android:id="@+id/btnUploadImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Image" />
 
-    <!-- Кнопка отправки на сервер -->
-    <Button
-        android:id="@+id/btnSendPhotoWithName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Отправить фото и ФИО"
-        android:layout_marginTop="8dp" />
+        <EditText
+            android:id="@+id/etDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter distance"
+            android:inputType="numberDecimal" />
 
+        <!-- ФИО -->
+        <EditText
+            android:id="@+id/etFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите ФИО"
+            android:layout_marginTop="12dp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingTop="8dp">
+        <!-- Кнопка выбора изображения -->
+        <Button
+            android:id="@+id/btnSelectPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выбрать фото" />
 
+        <!-- Просмотр выбранного изображения -->
+        <ImageView
+            android:id="@+id/imageViewPreview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:background="#DDDDDD" />
+
+        <!-- Кнопка отправки на сервер -->
+        <Button
+            android:id="@+id/btnSendPhotoWithName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Отправить фото и ФИО"
+            android:layout_marginTop="8dp" />
+
+        <!-- Контейнер для динамического контента -->
         <LinearLayout
             android:id="@+id/llContainer"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp" />
 
-
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F9FB"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Заголовок -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сигнализация"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- === Alerts Section === -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="События"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#555"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Последнее непрочитанное (большая яркая кнопка) -->
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button"
+            android:id="@+id/btnLastAlert"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="📢 Последнее событие"
+            android:textSize="18sp"
+            app:backgroundTint="@color/light_blue_500"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Все сообщения (обычный размер) -->
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/btnAllAlerts"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="📋 Все сообщения"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- === Management Section === -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Управление"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#555"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Добавить сотрудника -->
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button"
+            android:id="@+id/btnAddEmployee"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="➕ Добавить сотрудника"
+            android:textSize="16sp"
+            app:backgroundTint="@color/teal_700"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- === Simulation & Control Section === -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Эмуляция и управление"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#555"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Эмуляция взлома (красная, заметная) -->
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button"
+            android:id="@+id/btnSimulateIntrusion"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🎭 Эмуляция взлома"
+            android:textSize="16sp"
+            app:backgroundTint="@color/red_600"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Переключатель сигнализации -->
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/btnAlarmToggle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🔐 Включить/Отключить"
+            android:textSize="16sp"
+            app:strokeColor="@color/amber_700"
+            app:strokeWidth="2dp"/>
+
+    </LinearLayout>
+</ScrollView>

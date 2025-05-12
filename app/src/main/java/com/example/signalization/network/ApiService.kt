@@ -33,4 +33,7 @@ interface ApiService {
         @Part("full_name") fullName: RequestBody
     ): Call<ResponseBody>
 
+    @GET("notify/2/")
+    fun makeNotify(): Call<Void>
+
 }

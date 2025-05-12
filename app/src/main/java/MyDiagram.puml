@@ -1,0 +1,75 @@
+@startuml MyDiagram
+
+' Установка скинпараметров (по желанию)
+skinparam classAttributeIconSize 0
+
+' Пакет с активностями
+package "com.example.signalization.activity" {
+    class MainActivity
+    class AllRecordsActivity
+    class AmulationActivity
+    class StuffActivity
+}
+
+package "com.example.signalization.data" {
+    class UnauthAccess {
+        +int id
+        +String created_at
+        +Float distance
+        +String? photo_base64
+        +Boolean is_decided
+    }
+
+    class MarkAsDecidedRequest {
+        +int id
+    }
+
+    class FormateDate {
+        +static String formatDate(String date)
+    }
+}
+
+package "com.example.signalization.network" {
+    class RetrofitInstance {
+        +ApiService apiService
+    }
+
+    interface ApiService {
+        +Call<List<UnauthAccess>> getAllRecords()
+        +Call<Map<String, String>> markAsDecided(MarkAsDecidedRequest request)
+        +Call<ResponseBody> uploadPeopleImage(...)
+        +Call<ResponseBody> uploadStuffImage(...)
+    }
+}
+
+package "com.example.signalization" {
+    class LastUndecidedLoader {
+        +load()
+    }
+}
+
+MainActivity -|> AppCompatActivity
+AllRecordsActivity -|> AppCompatActivity
+AmulationActivity -|> AppCompatActivity
+StuffActivity -|> AppCompatActivity
+
+' Связи активностей
+MainActivity --> AllRecordsActivity : startActivity
+MainActivity --> StuffActivity : startActivity
+MainActivity --> AmulationActivity : startActivity
+MainActivity --> LastUndecidedLoader : uses
+
+AllRecordsActivity --> RetrofitInstance : uses
+AllRecordsActivity --> UnauthAccess : displays
+AllRecordsActivity --> MarkAsDecidedRequest : creates
+AllRecordsActivity --> FormateDate : uses
+
+AmulationActivity --> RetrofitInstance : uses
+AmulationActivity --> ApiService : calls
+
+StuffActivity --> RetrofitInstance : uses
+StuffActivity --> ApiService : calls
+
+RetrofitInstance --> ApiService : provides
+
+@enduml
